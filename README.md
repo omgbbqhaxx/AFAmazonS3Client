@@ -8,8 +8,9 @@ As the S3 API returns XML responses, you may find it useful to set [AFOnoRespons
 
 ```objective-c
 AFAmazonS3Manager *s3Manager = [[AFAmazonS3Manager alloc] initWithAccessKeyID:@"..." secret:@"..."];
-s3Manager.region = AFAmazonS3USWest1Region;
-s3Manager.bucket = @"my-bucket-name";
+s3Manager.requestSerializer.region = AFAmazonS3USWest1Region;
+s3Manager.requestSerializer.bucket = @"my-bucket-name";
+
 
 [s3Manager postObjectWithFile:@"/path/to/file"
               destinationPath:@"https://s3.amazonaws.com/example"
@@ -32,6 +33,7 @@ Mattt Thompson
 - http://github.com/mattt
 - http://twitter.com/mattt
 - m@mattt.me
+- Special thanks http://twitter.com/omgbbqhax
 
 ## License
 
